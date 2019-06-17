@@ -21,7 +21,7 @@ function publishGhPages() {
   });
 }
 
-const outputPath = path.resolve(__dirname, '.public');
+const outputPath = path.resolve(__dirname, 'public');
 module.exports = {
   output: {
     path: outputPath,
@@ -103,7 +103,7 @@ module.exports = {
       // 调用 Chrome 渲染出 PDF 文件
       const chromePath = findChrome();
       spawnSync(chromePath, ['--headless', '--disable-gpu', `--print-to-pdf=${path.resolve(outputPath, 'resume.pdf')}`,
-        'http://resume.wuhaolin.cn' // 这里注意改成你的在线简历的网站
+        'https://mriliujy.github.io/resume/' // 这里注意改成你的在线简历的网站
       ]);
 
       // 重新发布到 ghpages
