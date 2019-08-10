@@ -21,7 +21,7 @@ function publishGhPages() {
   });
 }
 
-const outputPath = path.resolve(__dirname, 'public');
+const outputPath = path.resolve(__dirname, './');
 module.exports = {
   output: {
     path: outputPath,
