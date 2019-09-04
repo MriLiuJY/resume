@@ -9,17 +9,17 @@ const EndWebpackPlugin = require('end-webpack-plugin');
 const { WebPlugin } = require('web-webpack-plugin');
 const ghpages = require('gh-pages');
 
-function publishGhPages() {
-  return new Promise((resolve, reject) => {
-    ghpages.publish(outputPath, { dotfiles: true }, (err) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve();
-      }
-    })
-  });
-}
+// function publishGhPages() {
+//   return new Promise((resolve, reject) => {
+//     ghpages.publish(outputPath, { dotfiles: true }, (err) => {
+//       if (err) {
+//         reject(err);
+//       } else {
+//         resolve();
+//       }
+//     })
+//   });
+// }
 
 const outputPath = path.resolve(__dirname, './');
 module.exports = {
@@ -96,18 +96,18 @@ module.exports = {
     }),
     new EndWebpackPlugin(async () => {
       // 自定义域名
-      fs.writeFileSync(path.resolve(outputPath, 'CNAME'), 'resume.wuhaolin.cn');
+      fs.writeFileSync(path.resolve(outputPath, 'CNAME'), 'mriliujy.github.io');
 
-      await publishGhPages();
+      // await publishGhPages();
 
       // 调用 Chrome 渲染出 PDF 文件
       const chromePath = findChrome();
-      spawnSync(chromePath, ['--headless', '--disable-gpu', `--print-to-pdf=${path.resolve(outputPath, 'resume.pdf')}`,
+      spawnSync(chromePath, ['--headless', '--disable-gpu', `--print-to-pdf=${path.resolve(outputPath, '前端开发工程师_2.5年经验_刘继宇_18827342903.pdf')}`,
         'https://mriliujy.github.io/resume/' // 这里注意改成你的在线简历的网站
       ]);
 
       // 重新发布到 ghpages
-      await publishGhPages();
+      // await publishGhPages();
     }),
   ]
 };
