@@ -1,7 +1,9 @@
 {
   "scripts": {
     "dev": "webpack-dev-server --open --hot",
-    "pub": "NODE_ENV=production webpack --config webpack-dist.config.js && rm -rf .public"
+    "start": "webpack-dev-server --open --hot",
+    "serve": "webpack-dev-server --open --hot",
+    "build": "NODE_ENV=production webpack --config webpack-dist.config.js && rm -rf .public"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
