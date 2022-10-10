@@ -9,7 +9,7 @@
     "autoprefixer": "^7.1.2",
     "chrome-finder": "^1.0.1",
     "compass-mixins": "^0.12.10",
-    "css-loader": "^0.28.5",
+    "css-loader": "^6.7.1",
     "end-webpack-plugin": "^1.0.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "gh-pages": "^1.0.0",
